@@ -1,0 +1,27 @@
+definition_version: 2
+entities:
+  Custom_Smoothie_App:
+    type: streamlit
+    meta:
+      use_mixins:
+        - streamlit_shared
+  Target 1:
+    type: streamlit
+    meta:
+      use_mixins:
+        - streamlit_shared
+      role: SYSADMIN
+    identifier:
+      name: D14PCCIPGJ2LFJEC
+      database: SMOOTHIES
+      schema: STAGES
+mixins:
+  streamlit_shared:
+    artifacts:
+      - pyproject.toml
+      - Main.py
+      - .streamlit/config.toml
+    title: Custom_Smoothie_App
+    query_warehouse: COMPUTE_WH
+    compute_pool: SYSTEM_COMPUTE_POOL_CPU
+    main_file: Main.py
